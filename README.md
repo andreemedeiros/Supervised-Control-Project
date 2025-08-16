@@ -84,7 +84,7 @@ Gato&rato_v2.wmod
 
 - [Vitor Lucas](https://github.com/Vitorluca)
 
-Contribution to the project [Print Automation](https://github.com/andreemedeiros/Supervised-Control-Project/graphs/contributors)
+Contribution to the project [Supervised-Control-Project](https://github.com/andreemedeiros/Supervised-Control-Project/graphs/contributors)
 
 ## Licença
 
