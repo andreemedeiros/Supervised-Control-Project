@@ -3,7 +3,7 @@
 ## Index
 - [Descrição](#Descrição)
 - [Eventos](#Eventos)
-- [Autômotos](#Autômotos)
+- [Autômatos](#Autômatos)
 - [Supervisor](#Supervisor)
 - [Requisitos](#Requisitos)
 - [Execução](#Execução)
@@ -14,7 +14,7 @@
 
 O sistema consiste em uma torre com 5 salas conectadas em um ciclo (Sala 1 → Sala 2 → Sala 3 → Sala 4 → Sala 5 → Sala 1). Há um gato e um rato que se movem livremente entre as salas. Sem controle:
 
-O gato não deve entrar na sala onde o rato está. Se isso acontecer o gato irá comer o rato (ou haverá uma "colisão" ou estado perigoso). Além disso, o sistema deve ser não bloqueante (não deve travar) e permitir o máximo de liberdade ao gato e ao rato.
+O gato não deve entrar na sala onde o rato está. Se isso acontecer o gato irá comer o rato (ou haverá uma "colisão" ou estado perigoso). Além disso, o sistema é não bloqueante (não deve travar) e permitir o máximo de liberdade ao gato e ao rato.
 
 ## Eventos
 
@@ -24,17 +24,20 @@ Não controláveis: Movimentos do rato e do gato (ocorrem espontaneamente).
 
 - move_gato_esquerda, move_gato_direita
 
-## Autômotos
+## Autômatos
 
-Depois de definir a topologia e separar os eventos não controláveis, usamos o software SUPREMICA para montar os autômatos de acordo com o funcionamento desejado. Criando um novo projeto e adicionando os eventos, conseguimos construir as três plantas necessárias (Rato, Gato e Alternância). Assim temos:
+Depois de definir a topologia e separar os eventos não controláveis, utilizamos o software Supremica para montar os autômatos conforme o funcionamento desejado. Ao criar o projeto, adicionamos os eventos e construímos as três plantas necessárias (Rato, Gato e Alternância). Assim, temos:
 
 - Autômato do Rato
+
 ![](img/rato.png)
 
 - Autômato do Gato
+
 ![](img/gato.png)
 
 - Autômato para alternância do rato e do gato
+
 ![](img/alternancia.png)
 
 ## Supervisor
@@ -42,20 +45,22 @@ Depois de definir a topologia e separar os eventos não controláveis, usamos o 
 Com todas as plantas prontas e funcionando corretamente, podemos usar o software para gerar o supervisor de forma automática. Assim temos:
 
 - Supervisor
+
 ![](img/supervisor.png)
 
 Após sintetizar todos os autômatos a fim de obter um sistema controlável, conseguimos criar a Suprema Sub-Linguagem Controlável:
 
 - Suprema Sub-linguagem Controlável
+
 ![](img/suprema.png)
 
 ## Requisitos
 
-Java versão 8.0+: [Link para Download](https://www.java.com/pt-BR/)
+- Java versão 8.0+: [Link para Download](https://www.java.com/pt-BR/)
 
-Graphviz: [Link para Download](https://www.graphviz.org/)
+- Graphviz: [Link para Download](https://www.graphviz.org/)
 
-Supremica IDE: [Link para Download](https://github.com/robimalik/Waters/releases/tag/v2.7.1)
+- Supremica IDE: [Link para Download](https://github.com/robimalik/Waters/releases/tag/v2.7.1)
 
 ## Execução
 
@@ -73,9 +78,11 @@ Gato&rato_v2.wmod
 
 ## Autores
 
-[André Medeiros](https://github.com/andreemedeiros)
-[João Marcelo](https://github.com/marcello-rbr)
-[Vitor Lucas](https://github.com/Vitorluca)
+- [André Medeiros](https://github.com/andreemedeiros)
+
+- [João Marcelo](https://github.com/marcello-rbr)
+
+- [Vitor Lucas](https://github.com/Vitorluca)
 
 Contribution to the project [Print Automation](https://github.com/andreemedeiros/Supervised-Control-Project/graphs/contributors)
 
