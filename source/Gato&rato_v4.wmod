@@ -159,10 +159,10 @@
 </SplineGeometry>
 <GuardActionBlock>
 <Guards>
-<BinaryExpression Operator="!=" Text="gato_state-3 != rato_state">
-<BinaryExpression Operator="-">
+<BinaryExpression Operator="!=" Text="gato_state+1 != rato_state">
+<BinaryExpression Operator="+">
 <SimpleIdentifier Name="gato_state"/>
-<IntConstant Value="3"/>
+<IntConstant Value="1"/>
 </BinaryExpression>
 <SimpleIdentifier Name="rato_state"/>
 </BinaryExpression>
@@ -221,10 +221,10 @@
 </SplineGeometry>
 <GuardActionBlock>
 <Guards>
-<BinaryExpression Operator="!=" Text="gato_state+3 != rato_state">
+<BinaryExpression Operator="!=" Text="gato_state+4 != rato_state">
 <BinaryExpression Operator="+">
 <SimpleIdentifier Name="gato_state"/>
-<IntConstant Value="3"/>
+<IntConstant Value="4"/>
 </BinaryExpression>
 <SimpleIdentifier Name="rato_state"/>
 </BinaryExpression>
@@ -511,10 +511,10 @@
 </SplineGeometry>
 <GuardActionBlock>
 <Guards>
-<BinaryExpression Operator="!=" Text="rato_state-3 != gato_state">
-<BinaryExpression Operator="-">
+<BinaryExpression Operator="!=" Text="rato_state+1 != gato_state">
+<BinaryExpression Operator="+">
 <SimpleIdentifier Name="rato_state"/>
-<IntConstant Value="3"/>
+<IntConstant Value="1"/>
 </BinaryExpression>
 <SimpleIdentifier Name="gato_state"/>
 </BinaryExpression>
@@ -694,10 +694,10 @@
 </SplineGeometry>
 <GuardActionBlock>
 <Guards>
-<BinaryExpression Operator="!=" Text="rato_state+3 != gato_state">
+<BinaryExpression Operator="!=" Text="rato_state+4 != gato_state">
 <BinaryExpression Operator="+">
 <SimpleIdentifier Name="rato_state"/>
-<IntConstant Value="3"/>
+<IntConstant Value="4"/>
 </BinaryExpression>
 <SimpleIdentifier Name="gato_state"/>
 </BinaryExpression>
