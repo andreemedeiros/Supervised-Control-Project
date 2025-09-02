@@ -4,7 +4,7 @@
 - [Descrição](#Descrição)
 - [Eventos](#Eventos)
 - [Autômatos](#Autômatos)
-- [Supervisor](#Supervisor)
+- [Guardas](#Guardas)
 - [Requisitos](#Requisitos)
 - [Execução](#Execução)
 - [Autores](#Autores)
@@ -18,7 +18,9 @@ O gato não deve entrar na sala onde o rato está. Se isso acontecer o gato irá
 
 ## Eventos
 
-Não controláveis: Movimentos do rato e do gato (ocorrem espontaneamente).
+Controláveis: Movimentos do Gato
+
+Não controláveis: Movimentos do rato (ocorrem espontaneamente).
 
 - move_rato_esquerda, move_rato_direita
 
@@ -26,7 +28,7 @@ Não controláveis: Movimentos do rato e do gato (ocorrem espontaneamente).
 
 ## Autômatos
 
-Depois de definir a topologia e separar os eventos não controláveis, utilizamos o software Supremica para montar os autômatos conforme o funcionamento desejado. Ao criar o projeto, adicionamos os eventos e construímos as três plantas necessárias (Rato, Gato e Alternância). Assim, temos:
+Depois de definir a topologia e separar os eventos controláveis e não controláveis, utilizamos o software Supremica para montar os autômatos conforme o funcionamento desejado. Ao criar o projeto, adicionamos os eventos e construímos as plantas necessárias (Rato, Gato e Portas). Assim, temos:
 
 - Autômato do Rato
 
@@ -36,31 +38,39 @@ Depois de definir a topologia e separar os eventos não controláveis, utilizamo
 
 ![](img/gato.png)
 
-- Autômato para alternância do rato e do gato
+## Guardas
 
-![](img/alternancia.png)
+O sistema de controle do autômato utiliza "guardas" (guards) para gerenciar as transições de estado (movimentos) do gato e do rato entre as 5 salas circulares. O objetivo principal é prevenir a colisão, ou seja, impedir que ambos ocupem a mesma sala simultaneamente.
 
-## Supervisor
+Antes de qualquer movimento, uma condição de guarda verifica se a sala de destino já está ocupada pelo outro personagem. Por exemplo, o gato só pode se mover para a próxima sala se o rato não estiver lá. Se o destino estiver ocupado, a guarda bloqueia a transição, agindo como uma "porta fechada". Essa lógica se aplica a todos os movimentos, garantindo que nunca haja colisão no autômato.
 
-Com todas as plantas prontas e funcionando corretamente, podemos usar o software para gerar o supervisor de forma automática. Assim temos:
+A lógica é implementada da seguinte forma:
 
-- Supervisor
+Variáveis de Estado:
 
-![](img/supervisor.png)
+gato_state: Armazena a posição atual do gato (um valor de 1 a 5).
 
-Após sintetizar todos os autômatos a fim de obter um sistema controlável, conseguimos criar a Suprema Sub-Linguagem Controlável:
+rato_state: Armazena a posição atual do rato (um valor de 1 a 5).
 
-- Suprema Sub-linguagem Controlável
+Condição de Guarda (Regra de Movimento):
+Uma transição de um estado para outro só é permitida se a condição da guarda for verdadeira. A guarda verifica se a sala de destino de um personagem está desocupada pelo outro.
 
-![](img/suprema.png)
+Implementação da Lógica:
+
+Para o Gato se Mover: Um movimento controlável do gato de sua sala atual para uma nova sala (sala_destino) só é autorizado se a seguinte condição for satisfeita:
+
+sala_destino != rato_state
+Para o Rato se Mover: Um movimento não controlável do rato para uma nova sala (sala_destino) só ocorre se a condição for satisfeita:
+
+sala_destino != gato_state
 
 ## Requisitos
 
-- Java versão 8.0+: [Link para Download](https://www.java.com/pt-BR/)
+- [Java versão 8.0+](https://www.java.com/pt-BR/)
 
-- Graphviz: [Link para Download](https://www.graphviz.org/)
+- [Graphviz](https://www.graphviz.org/)
 
-- Supremica IDE: [Link para Download](https://github.com/robimalik/Waters/releases/tag/v2.7.1)
+- [Supremica IDE](https://github.com/robimalik/Waters/releases/tag/v2.7.1)
 
 ## Execução
 
@@ -73,7 +83,7 @@ supremica.jar
 
 2. Com o Supremica aberto, abra o projeto "Gato&rato_v2.wmod" que se encontra na pasta source:
 ```
-Gato&rato_v2.wmod
+Gato&rato_v4.wmod
 ```
 
 ## Autores
@@ -84,7 +94,9 @@ Gato&rato_v2.wmod
 
 - [Vitor Lucas](https://github.com/Vitorluca)
 
-Contribution to the project [Supervised-Control-Project](https://github.com/andreemedeiros/Supervised-Control-Project/graphs/contributors)
+Contribua com o projeto [Supervised-Control-Project](https://github.com/andreemedeiros/Supervised-Control-Project/graphs/contributors)
+
+Video explicativo no [Youtube](https://www.youtube.com/watch?v=b7xZtg6EASs)
 
 ## Licença
 
