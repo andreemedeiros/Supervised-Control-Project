@@ -1,0 +1,744 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Module xmlns="http://waters.sourceforge.net/xsd/module" xmlns:B="http://waters.sourceforge.net/xsd/base" Name="Gato&amp;rato_v4">
+<EventDeclList>
+<EventDecl Kind="CONTROLLABLE" Name="mG_E"/>
+<EventDecl Kind="CONTROLLABLE" Name="mG_D"/>
+<EventDecl Kind="UNCONTROLLABLE" Name="mR_E"/>
+<EventDecl Kind="UNCONTROLLABLE" Name="mR_D"/>
+<EventDecl Kind="PROPOSITION" Name=":accepting"/>
+<EventDecl Kind="PROPOSITION" Name=":forbidden"/>
+</EventDeclList>
+<ComponentList>
+<SimpleComponent Kind="PLANT" Name="Gato">
+<Graph>
+<NodeList>
+<SimpleNode Initial="true" Name="Sala1">
+<PointGeometry>
+<Point X="176" Y="128"/>
+</PointGeometry>
+<InitialArrowGeometry>
+<Point X="-85" Y="-13"/>
+</InitialArrowGeometry>
+<LabelGeometry Anchor="NW">
+<Point X="0" Y="10"/>
+</LabelGeometry>
+</SimpleNode>
+<SimpleNode Name="Sala2">
+<PointGeometry>
+<Point X="336" Y="192"/>
+</PointGeometry>
+<LabelGeometry Anchor="NW">
+<Point X="0" Y="10"/>
+</LabelGeometry>
+</SimpleNode>
+<SimpleNode Name="Sala3">
+<PointGeometry>
+<Point X="240" Y="320"/>
+</PointGeometry>
+<LabelGeometry Anchor="NW">
+<Point X="0" Y="10"/>
+</LabelGeometry>
+</SimpleNode>
+<SimpleNode Name="Sala4">
+<PointGeometry>
+<Point X="96" Y="320"/>
+</PointGeometry>
+<LabelGeometry Anchor="NW">
+<Point X="0" Y="10"/>
+</LabelGeometry>
+</SimpleNode>
+<SimpleNode Name="Sala5">
+<PointGeometry>
+<Point X="48" Y="224"/>
+</PointGeometry>
+<LabelGeometry Anchor="NW">
+<Point X="-63" Y="2"/>
+</LabelGeometry>
+</SimpleNode>
+</NodeList>
+<EdgeList>
+<Edge Source="Sala1" Target="Sala2">
+<LabelBlock>
+<SimpleIdentifier Name="mG_D"/>
+<LabelGeometry Anchor="NW">
+<Point X="16" Y="-19"/>
+</LabelGeometry>
+</LabelBlock>
+<SplineGeometry>
+<Point X="262" Y="145"/>
+</SplineGeometry>
+<GuardActionBlock>
+<Guards>
+<BinaryExpression Operator="!=" Text="gato_state+1 != rato_state">
+<BinaryExpression Operator="+">
+<SimpleIdentifier Name="gato_state"/>
+<IntConstant Value="1"/>
+</BinaryExpression>
+<SimpleIdentifier Name="rato_state"/>
+</BinaryExpression>
+</Guards>
+<Actions>
+<BinaryExpression Operator="=" Text="gato_state = 2">
+<SimpleIdentifier Name="gato_state"/>
+<IntConstant Value="2"/>
+</BinaryExpression>
+</Actions>
+<LabelGeometry Anchor="NW">
+<Point X="187" Y="-31"/>
+</LabelGeometry>
+</GuardActionBlock>
+</Edge>
+<Edge Source="Sala2" Target="Sala3">
+<LabelBlock>
+<SimpleIdentifier Name="mG_D"/>
+</LabelBlock>
+<SplineGeometry>
+<Point X="301" Y="266"/>
+</SplineGeometry>
+<GuardActionBlock>
+<Guards>
+<BinaryExpression Operator="!=" Text="gato_state+1 != rato_state">
+<BinaryExpression Operator="+">
+<SimpleIdentifier Name="gato_state"/>
+<IntConstant Value="1"/>
+</BinaryExpression>
+<SimpleIdentifier Name="rato_state"/>
+</BinaryExpression>
+</Guards>
+<Actions>
+<BinaryExpression Operator="=" Text="gato_state = 3">
+<SimpleIdentifier Name="gato_state"/>
+<IntConstant Value="3"/>
+</BinaryExpression>
+</Actions>
+<LabelGeometry Anchor="NW">
+<Point X="128" Y="-11"/>
+</LabelGeometry>
+</GuardActionBlock>
+</Edge>
+<Edge Source="Sala3" Target="Sala4">
+<LabelBlock>
+<SimpleIdentifier Name="mG_D"/>
+<LabelGeometry Anchor="NW">
+<Point X="-11" Y="8"/>
+</LabelGeometry>
+</LabelBlock>
+<SplineGeometry>
+<Point X="168" Y="336"/>
+</SplineGeometry>
+<GuardActionBlock>
+<Guards>
+<BinaryExpression Operator="!=" Text="gato_state+1 != rato_state">
+<BinaryExpression Operator="+">
+<SimpleIdentifier Name="gato_state"/>
+<IntConstant Value="1"/>
+</BinaryExpression>
+<SimpleIdentifier Name="rato_state"/>
+</BinaryExpression>
+</Guards>
+<Actions>
+<BinaryExpression Operator="=" Text="gato_state = 4">
+<SimpleIdentifier Name="gato_state"/>
+<IntConstant Value="4"/>
+</BinaryExpression>
+</Actions>
+<LabelGeometry Anchor="NW">
+<Point X="191" Y="104"/>
+</LabelGeometry>
+</GuardActionBlock>
+</Edge>
+<Edge Source="Sala4" Target="Sala5">
+<LabelBlock>
+<SimpleIdentifier Name="mG_D"/>
+<LabelGeometry Anchor="NW">
+<Point X="-43" Y="9"/>
+</LabelGeometry>
+</LabelBlock>
+<SplineGeometry>
+<Point X="58" Y="279"/>
+</SplineGeometry>
+<GuardActionBlock>
+<Guards>
+<BinaryExpression Operator="!=" Text="gato_state+1 != rato_state">
+<BinaryExpression Operator="+">
+<SimpleIdentifier Name="gato_state"/>
+<IntConstant Value="1"/>
+</BinaryExpression>
+<SimpleIdentifier Name="rato_state"/>
+</BinaryExpression>
+</Guards>
+<Actions>
+<BinaryExpression Operator="=" Text="gato_state = 5">
+<SimpleIdentifier Name="gato_state"/>
+<IntConstant Value="5"/>
+</BinaryExpression>
+</Actions>
+<LabelGeometry Anchor="NW">
+<Point X="-204" Y="-16"/>
+</LabelGeometry>
+</GuardActionBlock>
+</Edge>
+<Edge Source="Sala5" Target="Sala1">
+<LabelBlock>
+<SimpleIdentifier Name="mG_D"/>
+<LabelGeometry Anchor="NW">
+<Point X="-48" Y="-21"/>
+</LabelGeometry>
+</LabelBlock>
+<SplineGeometry>
+<Point X="102" Y="163"/>
+</SplineGeometry>
+<GuardActionBlock>
+<Guards>
+<BinaryExpression Operator="!=" Text="gato_state-4 != rato_state">
+<BinaryExpression Operator="-">
+<SimpleIdentifier Name="gato_state"/>
+<IntConstant Value="4"/>
+</BinaryExpression>
+<SimpleIdentifier Name="rato_state"/>
+</BinaryExpression>
+</Guards>
+<Actions>
+<BinaryExpression Operator="=" Text="gato_state = 1">
+<SimpleIdentifier Name="gato_state"/>
+<IntConstant Value="1"/>
+</BinaryExpression>
+</Actions>
+<LabelGeometry Anchor="NW">
+<Point X="-241" Y="-59"/>
+</LabelGeometry>
+</GuardActionBlock>
+</Edge>
+<Edge Source="Sala1" Target="Sala5">
+<LabelBlock>
+<SimpleIdentifier Name="mG_E"/>
+<LabelGeometry Anchor="NW">
+<Point X="3" Y="0"/>
+</LabelGeometry>
+</LabelBlock>
+<SplineGeometry>
+<Point X="122" Y="189"/>
+</SplineGeometry>
+<GuardActionBlock>
+<Guards>
+<BinaryExpression Operator="!=" Text="gato_state+4 != rato_state">
+<BinaryExpression Operator="+">
+<SimpleIdentifier Name="gato_state"/>
+<IntConstant Value="4"/>
+</BinaryExpression>
+<SimpleIdentifier Name="rato_state"/>
+</BinaryExpression>
+</Guards>
+<Actions>
+<BinaryExpression Operator="=" Text="gato_state = 5">
+<SimpleIdentifier Name="gato_state"/>
+<IntConstant Value="5"/>
+</BinaryExpression>
+</Actions>
+<LabelGeometry Anchor="NW">
+<Point X="-260" Y="-27"/>
+</LabelGeometry>
+</GuardActionBlock>
+</Edge>
+<Edge Source="Sala5" Target="Sala4">
+<LabelBlock>
+<SimpleIdentifier Name="mG_E"/>
+<LabelGeometry Anchor="NW">
+<Point X="12" Y="-4"/>
+</LabelGeometry>
+</LabelBlock>
+<SplineGeometry>
+<Point X="86" Y="265"/>
+</SplineGeometry>
+<GuardActionBlock>
+<Guards>
+<BinaryExpression Operator="!=" Text="gato_state-1 != rato_state">
+<BinaryExpression Operator="-">
+<SimpleIdentifier Name="gato_state"/>
+<IntConstant Value="1"/>
+</BinaryExpression>
+<SimpleIdentifier Name="rato_state"/>
+</BinaryExpression>
+</Guards>
+<Actions>
+<BinaryExpression Operator="=" Text="gato_state = 4">
+<SimpleIdentifier Name="gato_state"/>
+<IntConstant Value="4"/>
+</BinaryExpression>
+</Actions>
+<LabelGeometry Anchor="NW">
+<Point X="-239" Y="46"/>
+</LabelGeometry>
+</GuardActionBlock>
+</Edge>
+<Edge Source="Sala4" Target="Sala3">
+<LabelBlock>
+<SimpleIdentifier Name="mG_E"/>
+<LabelGeometry Anchor="NW">
+<Point X="-13" Y="-29"/>
+</LabelGeometry>
+</LabelBlock>
+<SplineGeometry>
+<Point X="168" Y="304"/>
+</SplineGeometry>
+<GuardActionBlock>
+<Guards>
+<BinaryExpression Operator="!=" Text="gato_state-1 != rato_state">
+<BinaryExpression Operator="-">
+<SimpleIdentifier Name="gato_state"/>
+<IntConstant Value="1"/>
+</BinaryExpression>
+<SimpleIdentifier Name="rato_state"/>
+</BinaryExpression>
+</Guards>
+<Actions>
+<BinaryExpression Operator="=" Text="gato_state = 3">
+<SimpleIdentifier Name="gato_state"/>
+<IntConstant Value="3"/>
+</BinaryExpression>
+</Actions>
+<LabelGeometry Anchor="NW">
+<Point X="188" Y="96"/>
+</LabelGeometry>
+</GuardActionBlock>
+</Edge>
+<Edge Source="Sala3" Target="Sala2">
+<LabelBlock>
+<SimpleIdentifier Name="mG_E"/>
+<LabelGeometry Anchor="NW">
+<Point X="-51" Y="-10"/>
+</LabelGeometry>
+</LabelBlock>
+<SplineGeometry>
+<Point X="275" Y="246"/>
+</SplineGeometry>
+<GuardActionBlock>
+<Guards>
+<BinaryExpression Operator="!=" Text="gato_state-1 != rato_state">
+<BinaryExpression Operator="-">
+<SimpleIdentifier Name="gato_state"/>
+<IntConstant Value="1"/>
+</BinaryExpression>
+<SimpleIdentifier Name="rato_state"/>
+</BinaryExpression>
+</Guards>
+<Actions>
+<BinaryExpression Operator="=" Text="gato_state = 2">
+<SimpleIdentifier Name="gato_state"/>
+<IntConstant Value="2"/>
+</BinaryExpression>
+</Actions>
+<LabelGeometry Anchor="NW">
+<Point X="151" Y="50"/>
+</LabelGeometry>
+</GuardActionBlock>
+</Edge>
+<Edge Source="Sala2" Target="Sala1">
+<LabelBlock>
+<SimpleIdentifier Name="mG_E"/>
+<LabelGeometry Anchor="NW">
+<Point X="-34" Y="9"/>
+</LabelGeometry>
+</LabelBlock>
+<SplineGeometry>
+<Point X="250" Y="175"/>
+</SplineGeometry>
+<GuardActionBlock>
+<Guards>
+<BinaryExpression Operator="!=" Text="gato_state-1 != rato_state">
+<BinaryExpression Operator="-">
+<SimpleIdentifier Name="gato_state"/>
+<IntConstant Value="1"/>
+</BinaryExpression>
+<SimpleIdentifier Name="rato_state"/>
+</BinaryExpression>
+</Guards>
+<Actions>
+<BinaryExpression Operator="=" Text="gato_state = 1">
+<SimpleIdentifier Name="gato_state"/>
+<IntConstant Value="1"/>
+</BinaryExpression>
+</Actions>
+<LabelGeometry Anchor="NW">
+<Point X="200" Y="-25"/>
+</LabelGeometry>
+</GuardActionBlock>
+</Edge>
+</EdgeList>
+</Graph>
+</SimpleComponent>
+<SimpleComponent Kind="PLANT" Name="Rato">
+<Graph>
+<NodeList>
+<SimpleNode Name="Sala1">
+<PointGeometry>
+<Point X="256" Y="128"/>
+</PointGeometry>
+<LabelGeometry Anchor="NW">
+<Point X="-16" Y="-28"/>
+</LabelGeometry>
+</SimpleNode>
+<SimpleNode Name="Sala2">
+<PointGeometry>
+<Point X="448" Y="208"/>
+</PointGeometry>
+<LabelGeometry Anchor="NW">
+<Point X="0" Y="10"/>
+</LabelGeometry>
+</SimpleNode>
+<SimpleNode Name="Sala3">
+<PointGeometry>
+<Point X="352" Y="336"/>
+</PointGeometry>
+<LabelGeometry Anchor="NW">
+<Point X="0" Y="10"/>
+</LabelGeometry>
+</SimpleNode>
+<SimpleNode Initial="true" Name="Sala4">
+<PointGeometry>
+<Point X="160" Y="352"/>
+</PointGeometry>
+<InitialArrowGeometry>
+<Point X="-16" Y="27"/>
+</InitialArrowGeometry>
+<LabelGeometry Anchor="NW">
+<Point X="0" Y="10"/>
+</LabelGeometry>
+</SimpleNode>
+<SimpleNode Name="Sala5">
+<PointGeometry>
+<Point X="96" Y="208"/>
+</PointGeometry>
+<LabelGeometry Anchor="NW">
+<Point X="-47" Y="-16"/>
+</LabelGeometry>
+</SimpleNode>
+</NodeList>
+<EdgeList>
+<Edge Source="Sala1" Target="Sala2">
+<LabelBlock>
+<SimpleIdentifier Name="mR_D"/>
+</LabelBlock>
+<SplineGeometry>
+<Point X="358" Y="153"/>
+</SplineGeometry>
+<GuardActionBlock>
+<Guards>
+<BinaryExpression Operator="!=" Text="rato_state+1 != gato_state">
+<BinaryExpression Operator="+">
+<SimpleIdentifier Name="rato_state"/>
+<IntConstant Value="1"/>
+</BinaryExpression>
+<SimpleIdentifier Name="gato_state"/>
+</BinaryExpression>
+</Guards>
+<Actions>
+<BinaryExpression Operator="=" Text="rato_state = 2">
+<SimpleIdentifier Name="rato_state"/>
+<IntConstant Value="2"/>
+</BinaryExpression>
+</Actions>
+<LabelGeometry Anchor="NW">
+<Point X="109" Y="-27"/>
+</LabelGeometry>
+</GuardActionBlock>
+</Edge>
+<Edge Source="Sala2" Target="Sala3">
+<LabelBlock>
+<SimpleIdentifier Name="mR_D"/>
+</LabelBlock>
+<SplineGeometry>
+<Point X="413" Y="282"/>
+</SplineGeometry>
+<GuardActionBlock>
+<Guards>
+<BinaryExpression Operator="!=" Text="rato_state+1 != gato_state">
+<BinaryExpression Operator="+">
+<SimpleIdentifier Name="rato_state"/>
+<IntConstant Value="1"/>
+</BinaryExpression>
+<SimpleIdentifier Name="gato_state"/>
+</BinaryExpression>
+</Guards>
+<Actions>
+<BinaryExpression Operator="=" Text="rato_state = 3">
+<SimpleIdentifier Name="rato_state"/>
+<IntConstant Value="3"/>
+</BinaryExpression>
+</Actions>
+<LabelGeometry Anchor="NW">
+<Point X="66" Y="11"/>
+</LabelGeometry>
+</GuardActionBlock>
+</Edge>
+<Edge Source="Sala3" Target="Sala4">
+<LabelBlock>
+<SimpleIdentifier Name="mR_D"/>
+</LabelBlock>
+<SplineGeometry>
+<Point X="257" Y="360"/>
+</SplineGeometry>
+<GuardActionBlock>
+<Guards>
+<BinaryExpression Operator="!=" Text="rato_state+1 != gato_state">
+<BinaryExpression Operator="+">
+<SimpleIdentifier Name="rato_state"/>
+<IntConstant Value="1"/>
+</BinaryExpression>
+<SimpleIdentifier Name="gato_state"/>
+</BinaryExpression>
+</Guards>
+<Actions>
+<BinaryExpression Operator="=" Text="rato_state = 4">
+<SimpleIdentifier Name="rato_state"/>
+<IntConstant Value="4"/>
+</BinaryExpression>
+</Actions>
+<LabelGeometry Anchor="NW">
+<Point X="-25" Y="90"/>
+</LabelGeometry>
+</GuardActionBlock>
+</Edge>
+<Edge Source="Sala4" Target="Sala5">
+<LabelBlock>
+<SimpleIdentifier Name="mR_D"/>
+<LabelGeometry Anchor="NW">
+<Point X="-36" Y="18"/>
+</LabelGeometry>
+</LabelBlock>
+<SplineGeometry>
+<Point X="113" Y="286"/>
+</SplineGeometry>
+<GuardActionBlock>
+<Guards>
+<BinaryExpression Operator="!=" Text="rato_state+1 != gato_state">
+<BinaryExpression Operator="+">
+<SimpleIdentifier Name="rato_state"/>
+<IntConstant Value="1"/>
+</BinaryExpression>
+<SimpleIdentifier Name="gato_state"/>
+</BinaryExpression>
+</Guards>
+<Actions>
+<BinaryExpression Operator="=" Text="rato_state = 5">
+<SimpleIdentifier Name="rato_state"/>
+<IntConstant Value="5"/>
+</BinaryExpression>
+</Actions>
+<LabelGeometry Anchor="NW">
+<Point X="-192" Y="56"/>
+</LabelGeometry>
+</GuardActionBlock>
+</Edge>
+<Edge Source="Sala5" Target="Sala1">
+<LabelBlock>
+<SimpleIdentifier Name="mR_D"/>
+<LabelGeometry Anchor="NW">
+<Point X="-63" Y="-28"/>
+</LabelGeometry>
+</LabelBlock>
+<SplineGeometry>
+<Point X="169" Y="154"/>
+</SplineGeometry>
+<GuardActionBlock>
+<Guards>
+<BinaryExpression Operator="!=" Text="rato_state-4 != gato_state">
+<BinaryExpression Operator="-">
+<SimpleIdentifier Name="rato_state"/>
+<IntConstant Value="4"/>
+</BinaryExpression>
+<SimpleIdentifier Name="gato_state"/>
+</BinaryExpression>
+</Guards>
+<Actions>
+<BinaryExpression Operator="=" Text="rato_state = 1">
+<SimpleIdentifier Name="rato_state"/>
+<IntConstant Value="1"/>
+</BinaryExpression>
+</Actions>
+<LabelGeometry Anchor="NW">
+<Point X="-264" Y="-74"/>
+</LabelGeometry>
+</GuardActionBlock>
+</Edge>
+<Edge Source="Sala5" Target="Sala4">
+<LabelBlock>
+<SimpleIdentifier Name="mR_E"/>
+<LabelGeometry Anchor="NW">
+<Point X="8" Y="-13"/>
+</LabelGeometry>
+</LabelBlock>
+<SplineGeometry>
+<Point X="139" Y="273"/>
+</SplineGeometry>
+<GuardActionBlock>
+<Guards>
+<BinaryExpression Operator="!=" Text="rato_state-1 != gato_state">
+<BinaryExpression Operator="-">
+<SimpleIdentifier Name="rato_state"/>
+<IntConstant Value="1"/>
+</BinaryExpression>
+<SimpleIdentifier Name="gato_state"/>
+</BinaryExpression>
+</Guards>
+<Actions>
+<BinaryExpression Operator="=" Text="rato_state = 4">
+<SimpleIdentifier Name="rato_state"/>
+<IntConstant Value="4"/>
+</BinaryExpression>
+</Actions>
+<LabelGeometry Anchor="NW">
+<Point X="-225" Y="22"/>
+</LabelGeometry>
+</GuardActionBlock>
+</Edge>
+<Edge Source="Sala4" Target="Sala3">
+<LabelBlock>
+<SimpleIdentifier Name="mR_E"/>
+<LabelGeometry Anchor="NW">
+<Point X="-15" Y="-31"/>
+</LabelGeometry>
+</LabelBlock>
+<SplineGeometry>
+<Point X="255" Y="328"/>
+</SplineGeometry>
+<GuardActionBlock>
+<Guards>
+<BinaryExpression Operator="!=" Text="rato_state-1 != gato_state">
+<BinaryExpression Operator="-">
+<SimpleIdentifier Name="rato_state"/>
+<IntConstant Value="1"/>
+</BinaryExpression>
+<SimpleIdentifier Name="gato_state"/>
+</BinaryExpression>
+</Guards>
+<Actions>
+<BinaryExpression Operator="=" Text="rato_state = 3">
+<SimpleIdentifier Name="rato_state"/>
+<IntConstant Value="3"/>
+</BinaryExpression>
+</Actions>
+<LabelGeometry Anchor="NW">
+<Point X="-18" Y="84"/>
+</LabelGeometry>
+</GuardActionBlock>
+</Edge>
+<Edge Source="Sala3" Target="Sala2">
+<LabelBlock>
+<SimpleIdentifier Name="mR_E"/>
+<LabelGeometry Anchor="NW">
+<Point X="-50" Y="-10"/>
+</LabelGeometry>
+</LabelBlock>
+<SplineGeometry>
+<Point X="387" Y="262"/>
+</SplineGeometry>
+<GuardActionBlock>
+<Guards>
+<BinaryExpression Operator="!=" Text="rato_state-1 != gato_state">
+<BinaryExpression Operator="-">
+<SimpleIdentifier Name="rato_state"/>
+<IntConstant Value="1"/>
+</BinaryExpression>
+<SimpleIdentifier Name="gato_state"/>
+</BinaryExpression>
+</Guards>
+<Actions>
+<BinaryExpression Operator="=" Text="rato_state = 2">
+<SimpleIdentifier Name="rato_state"/>
+<IntConstant Value="2"/>
+</BinaryExpression>
+</Actions>
+<LabelGeometry Anchor="NW">
+<Point X="93" Y="-6"/>
+</LabelGeometry>
+</GuardActionBlock>
+</Edge>
+<Edge Source="Sala2" Target="Sala1">
+<LabelBlock>
+<SimpleIdentifier Name="mR_E"/>
+<LabelGeometry Anchor="NW">
+<Point X="-48" Y="5"/>
+</LabelGeometry>
+</LabelBlock>
+<SplineGeometry>
+<Point X="346" Y="183"/>
+</SplineGeometry>
+<GuardActionBlock>
+<Guards>
+<BinaryExpression Operator="!=" Text="rato_state-1 != gato_state">
+<BinaryExpression Operator="-">
+<SimpleIdentifier Name="rato_state"/>
+<IntConstant Value="1"/>
+</BinaryExpression>
+<SimpleIdentifier Name="gato_state"/>
+</BinaryExpression>
+</Guards>
+<Actions>
+<BinaryExpression Operator="=" Text="rato_state = 1">
+<SimpleIdentifier Name="rato_state"/>
+<IntConstant Value="1"/>
+</BinaryExpression>
+</Actions>
+<LabelGeometry Anchor="NW">
+<Point X="120" Y="-112"/>
+</LabelGeometry>
+</GuardActionBlock>
+</Edge>
+<Edge Source="Sala1" Target="Sala5">
+<LabelBlock>
+<SimpleIdentifier Name="mR_E"/>
+</LabelBlock>
+<SplineGeometry>
+<Point X="183" Y="182"/>
+</SplineGeometry>
+<GuardActionBlock>
+<Guards>
+<BinaryExpression Operator="!=" Text="rato_state+4 != gato_state">
+<BinaryExpression Operator="+">
+<SimpleIdentifier Name="rato_state"/>
+<IntConstant Value="4"/>
+</BinaryExpression>
+<SimpleIdentifier Name="gato_state"/>
+</BinaryExpression>
+</Guards>
+<Actions>
+<BinaryExpression Operator="=" Text="rato_state = 5">
+<SimpleIdentifier Name="rato_state"/>
+<IntConstant Value="5"/>
+</BinaryExpression>
+</Actions>
+<LabelGeometry Anchor="NW">
+<Point X="-282" Y="-65"/>
+</LabelGeometry>
+</GuardActionBlock>
+</Edge>
+</EdgeList>
+</Graph>
+</SimpleComponent>
+<VariableComponent Name="rato_state">
+<VariableRange><BinaryExpression Operator="..">
+<IntConstant Value="1"/>
+<IntConstant Value="5"/>
+</BinaryExpression>
+</VariableRange>
+<VariableInitial><BinaryExpression Operator="==" Text="rato_state == 4">
+<SimpleIdentifier Name="rato_state"/>
+<IntConstant Value="4"/>
+</BinaryExpression>
+</VariableInitial>
+</VariableComponent>
+<VariableComponent Name="gato_state">
+<VariableRange><BinaryExpression Operator="..">
+<IntConstant Value="1"/>
+<IntConstant Value="5"/>
+</BinaryExpression>
+</VariableRange>
+<VariableInitial><BinaryExpression Operator="==" Text="gato_state == 1">
+<SimpleIdentifier Name="gato_state"/>
+<IntConstant Value="1"/>
+</BinaryExpression>
+</VariableInitial>
+</VariableComponent>
+</ComponentList>
+</Module>
